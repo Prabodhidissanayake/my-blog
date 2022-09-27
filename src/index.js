@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {RouterProvider, createBrowserRouter, redirect} from 'react-router-dom'
-import Layout from './Layout';
-import Home from './Home';
-import Blogs from './Blogs';
+import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import Layout from './components/layout/Layout';
+import Home from './components/home/Home';
+import Blogs from './components/blog-list/BlogList';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,   
+    element: <Layout/>,   
     children: [
       {
         path: "home",

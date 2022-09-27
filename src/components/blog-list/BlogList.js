@@ -1,6 +1,6 @@
 function Blogs() {
     return (
-      <div className="App">
+      <div>
         Blogsss
       </div>
     );
