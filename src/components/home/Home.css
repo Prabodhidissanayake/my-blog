@@ -1,0 +1,25 @@
+.home-container{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.panel{
+    border: 1px solid;
+    width: 43%;
+    height: 75%;
+    background-color: yellow;
+}
+
+.left-panel {
+    margin-left: 4%;
+}
+
+.right-panel{
+    margin-right: 4%;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+}
+
