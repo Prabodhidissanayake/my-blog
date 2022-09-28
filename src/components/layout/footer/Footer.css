@@ -1,4 +1,7 @@
 .footer{
     height: 10vh;
-    background-color: blue;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    padding-top: 35px;
 }

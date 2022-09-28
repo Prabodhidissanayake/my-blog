@@ -1,10 +1,17 @@
 import "./Home.css";
+import BlogDisplay from "../blogPost/BlogsDisplay";
+import BlogForm from "../form/Form";
+
 
 function Home() {
   return (
     <div className="home-container">
-      <h1 className="panel left-panel"> Form</h1>
-      <h1 className="panel right-panel"> view blogs</h1>
+      <div className="panel left-panel"> 
+      <BlogForm className="form"></BlogForm>
+      </div>
+      <div className="panel right-panel">
+        <BlogDisplay></BlogDisplay>
+      </div>
     </div>
   );
 }

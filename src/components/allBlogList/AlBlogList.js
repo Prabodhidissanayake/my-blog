@@ -1,7 +1,9 @@
+import BlogDisplay from "../blogPost/BlogsDisplay";
+
 function Blogs() {
     return (
       <div>
-        Blogsss
+        <BlogDisplay></BlogDisplay>
       </div>
     );
   }
