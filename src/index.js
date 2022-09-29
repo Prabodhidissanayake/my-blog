@@ -8,14 +8,9 @@ import Home from "./components/home/Home";
 import Blogs from "./components/Blogs/Blogs";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function redirectToHome() {
-  console.log("triggger");
-}
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    {/* <Router> */}
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -25,7 +20,6 @@ root.render(
         </Route>
       </Routes>
     </BrowserRouter>
-    {/* </Router> */}
   </React.StrictMode>
 );
 

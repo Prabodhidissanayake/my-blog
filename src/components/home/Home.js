@@ -1,5 +1,5 @@
 import "./Home.css";
-import BlogDisplay from "../blogPost/BlogsDisplay";
+import BlogDisplay from "../blogPost/BlogDisplay";
 import BlogForm from "../form/Form";
 import ButtonClick from "../button/Button";
 
@@ -11,8 +11,8 @@ function Home() {
         <ButtonClick></ButtonClick>
       </div>
       <div className="panel right-panel">
-        <BlogDisplay></BlogDisplay>
-        <ButtonClick className="blog-btn" ></ButtonClick>
+        <BlogDisplay count="4"></BlogDisplay>
+        <ButtonClick className="blog-btn"></ButtonClick>
       </div>
     </div>
   );
