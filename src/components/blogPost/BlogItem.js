@@ -1,8 +1,9 @@
 import Card from "react-bootstrap/Card";
+import "./BlogItem.css";
 
 function BlogItem() {
   return (
-    <Card style={{ width: "15rem" }}>
+    <Card className="blog-item" style={{ width: "15rem" }}>
       <Card.Img
         variant="top"
         src="/home/prabodhi/Projects/my-blog/src/components/watch.jpg"

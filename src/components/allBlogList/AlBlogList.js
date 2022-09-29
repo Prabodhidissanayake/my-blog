@@ -1,11 +1,15 @@
 import BlogDisplay from "../blogPost/BlogsDisplay";
+import BlogpgPagination from "../pagination/Pagination";
 
 function Blogs() {
-    return (
+  return (
+    <div>
+      <BlogDisplay></BlogDisplay>
       <div>
-        <BlogDisplay></BlogDisplay>
+        <BlogpgPagination></BlogpgPagination>
       </div>
-    );
-  }
-  
-  export default Blogs;
+    </div>
+  );
+}
+
+export default Blogs;
