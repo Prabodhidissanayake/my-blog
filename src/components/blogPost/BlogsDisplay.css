@@ -1,7 +1,13 @@
-.blog{
+.blog-container{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     background-color: lightgray;
+}
+.blogs{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .blog-btn {

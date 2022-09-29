@@ -39,20 +39,36 @@ class BlogPagination extends React.Component {
   }
 
   onPageClick = (page) => {
-    console.log("clicked " + page);
+    this.props.onPageSelect(page);
   };
 
   render() {
     return (
       <Pagination>
         {/* {JSON.stringify(this.props)} */}
-        <Pagination.First />
+        <Pagination.First
+          onClick={() => {
+            this.onPageClick(1);
+          }}
+        />
         {this.props.paginationDetails.currentPage == 1 && (
           <Pagination.Prev disabled />
         )}
-        {this.props.paginationDetails.currentPage > 1 && <Pagination.Prev />}
+        {this.props.paginationDetails.currentPage > 1 && (
+          <Pagination.Prev
+            onClick={() => {
+              this.onPageClick(this.props.paginationDetails.currentPage - 1);
+            }}
+          />
+        )}
         {this.props.paginationDetails.currentPage > 3 && (
-          <Pagination.Item>{1}</Pagination.Item>
+          <Pagination.Item
+            onClick={() => {
+              this.onPageClick(1);
+            }}
+          >
+            {1}
+          </Pagination.Item>
         )}
         {this.props.paginationDetails.currentPage > 4 && (
           <Pagination.Ellipsis disabled />
@@ -67,15 +83,29 @@ class BlogPagination extends React.Component {
 
         {this.props.paginationDetails.currentPage <
           this.props.paginationDetails.lastPage - 2 && (
-          <Pagination.Item>
+          <Pagination.Item
+            onClick={() => {
+              this.onPageClick(this.props.paginationDetails.lastPage);
+            }}
+          >
             {this.props.paginationDetails.lastPage}
           </Pagination.Item>
         )}
 
         {this.props.paginationDetails.currentPage !=
-          this.props.paginationDetails.lastPage && <Pagination.Next />}
+          this.props.paginationDetails.lastPage && (
+          <Pagination.Next
+            onClick={() => {
+              this.onPageClick(this.props.paginationDetails.currentPage + 1);
+            }}
+          />
+        )}
 
-        <Pagination.Last />
+        <Pagination.Last
+          onClick={() => {
+            this.onPageClick(this.props.paginationDetails.lastPage);
+          }}
+        />
       </Pagination>
     );
   }

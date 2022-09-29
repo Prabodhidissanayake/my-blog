@@ -1,5 +1,5 @@
 import "./BlogsDisplay.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { getBlogs } from "../../services/blogApi";
 import BlogItem from "./BlogItem";
 import BlogPagination from "../blogPagination/BlogPagination";
@@ -9,12 +9,18 @@ class BlogDisplay extends React.Component {
     super();
     this.state = {
       blogsResponse: {},
+      currentPage: 1,
     };
   }
 
   setBlogsResponse(response) {
     this.setState({ blogsResponse: response });
   }
+
+  setCurrentPage = (page) => {
+    this.setState({ currentPage: page });
+    this.loadBlogs();
+  };
 
   getBlogPosts() {
     return this.state.blogsResponse ? this.state.blogsResponse.data : [];
@@ -28,7 +34,7 @@ class BlogDisplay extends React.Component {
   }
 
   loadBlogs() {
-    getBlogs(41, this.props.count)
+    getBlogs(this.state.currentPage, this.props.count)
       .then((response) => response.json())
       .then((data) => this.setBlogsResponse(data));
   }
@@ -45,13 +51,16 @@ class BlogDisplay extends React.Component {
 
   render() {
     return (
-      <div className="blog">
-        {this.state.blogsResponse &&
-          this.state.blogsResponse.data &&
-          this.getBlogPostComps()}
+      <div className="blog-container">
+        <div className="blogs">
+          {this.state.blogsResponse &&
+            this.state.blogsResponse.data &&
+            this.getBlogPostComps()}
+        </div>
         {this.props.showPagination && (
           <BlogPagination
             paginationDetails={this.getPaginationDetails()}
+            onPageSelect={this.setCurrentPage}
           ></BlogPagination>
         )}
       </div>
