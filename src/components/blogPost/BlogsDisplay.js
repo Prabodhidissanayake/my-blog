@@ -2,7 +2,7 @@ import "./BlogsDisplay.css";
 import React from "react";
 import { getBlogs } from "../../services/blogApi";
 import BlogItem from "./BlogItem";
-import Pagination from "./../pagination/Pagination";
+import BlogPagination from "../blogPagination/BlogPagination";
 
 class BlogDisplay extends React.Component {
   constructor() {
@@ -20,8 +20,15 @@ class BlogDisplay extends React.Component {
     return this.state.blogsResponse ? this.state.blogsResponse.data : [];
   }
 
+  getPaginationDetails() {
+    return {
+      currentPage: this.state.blogsResponse.current_page,
+      lastPage: this.state.blogsResponse.last_page,
+    };
+  }
+
   loadBlogs() {
-    getBlogs(1, this.props.count)
+    getBlogs(41, this.props.count)
       .then((response) => response.json())
       .then((data) => this.setBlogsResponse(data));
   }
@@ -42,7 +49,11 @@ class BlogDisplay extends React.Component {
         {this.state.blogsResponse &&
           this.state.blogsResponse.data &&
           this.getBlogPostComps()}
-        {this.props.showPagination && <Pagination></Pagination>}
+        {this.props.showPagination && (
+          <BlogPagination
+            paginationDetails={this.getPaginationDetails()}
+          ></BlogPagination>
+        )}
       </div>
     );
   }
