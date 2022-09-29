@@ -22,14 +22,25 @@ class BlogPagination extends React.Component {
   getPaginationItemsFromCurrentPage() {
     return this.getPrintablePgNumbers().map((pgNumber) => {
       return this.props.paginationDetails.currentPage == pgNumber ? (
-        <Pagination.Item active>{pgNumber}</Pagination.Item>
+        <Pagination.Item active key={pgNumber}>
+          {pgNumber}
+        </Pagination.Item>
       ) : (
-        <Pagination.Item>{pgNumber}</Pagination.Item>
+        <Pagination.Item
+          key={pgNumber}
+          onClick={() => {
+            this.onPageClick(pgNumber);
+          }}
+        >
+          {pgNumber}
+        </Pagination.Item>
       );
     });
   }
 
-  onClick(page) {}
+  onPageClick = (page) => {
+    console.log("clicked " + page);
+  };
 
   render() {
     return (
