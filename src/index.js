@@ -1,18 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import {RouterProvider, createBrowserRouter} from 'react-router-dom'
-import Layout from './components/layout/Layout';
-import Home from './components/home/Home';
-import Blogs from './components/allBlogList/AlBlogList';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import Home from "./components/home/Home";
+import Blogs from "./components/Blogs/Blogs";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout/>,   
+    element: <Layout />,
     children: [
       {
         path: "home",
@@ -21,12 +20,12 @@ const router = createBrowserRouter([
       {
         path: "blogs",
         element: <Blogs />,
-      }
+      },
     ],
-  }
+  },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
