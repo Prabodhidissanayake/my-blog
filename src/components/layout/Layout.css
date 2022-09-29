@@ -1,6 +1,6 @@
 .layout{
     padding: 0 10vw;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -8,5 +8,5 @@
 
 .content{
     background-color: chartreuse;
-    height: 60vh;
+    min-height: 60vh;
 }

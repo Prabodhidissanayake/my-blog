@@ -1,5 +1,5 @@
 import "./BlogsDisplay.css";
-import React, { useState } from "react";
+import React from "react";
 import { getBlogs } from "../../services/blogApi";
 import BlogItem from "./BlogItem";
 
@@ -42,7 +42,7 @@ class BlogDisplay extends React.Component {
   }
 
   loadBlogs() {
-    getBlogs()
+    getBlogs(1, this.props.count)
       .then((response) => response.json())
       .then((data) => this.setBlogsResponse(data));
   }
@@ -52,8 +52,8 @@ class BlogDisplay extends React.Component {
   }
 
   getBlogPostComps() {
-    return this.getBlogPosts().map((blog) => {
-      return <BlogItem></BlogItem>;
+    return this.getBlogPosts().map((blog, index) => {
+      return <BlogItem key={index} blog={blog}></BlogItem>;
     });
   }
 

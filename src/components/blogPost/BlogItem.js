@@ -1,23 +1,32 @@
+import React from "react";
 import Card from "react-bootstrap/Card";
 import "./BlogItem.css";
+import placeholderImg from "../../img/watch.jpg";
 
-function BlogItem() {
-  return (
-    <Card className="blog-item" style={{ width: "15rem" }}>
-      <Card.Img
-        variant="top"
-        src="/home/prabodhi/Projects/my-blog/src/components/watch.jpg"
-      />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        {/* <Button variant="primary">Go somewhere</Button> */}
-      </Card.Body>
-    </Card>
-  );
+class BlogItem extends React.Component {
+  constructor() {
+    super();
+  }
+
+  getBlog() {
+    return this.props.blog;
+  }
+
+  render() {
+    return (
+      <Card className="blog-item" style={{ width: "15rem" }}>
+        {/* <Card.Img
+          variant="top"
+          src={"https://frontend-case-api.sbdev.nl/" + this.getBlog().img_url}
+        /> */}
+        <Card.Img variant="top" src={placeholderImg} />
+        <Card.Body>
+          <Card.Title>{this.getBlog().title}</Card.Title>
+          <Card.Text>{this.getBlog().content}</Card.Text>
+        </Card.Body>
+      </Card>
+    );
+  }
 }
 
 export default BlogItem;
