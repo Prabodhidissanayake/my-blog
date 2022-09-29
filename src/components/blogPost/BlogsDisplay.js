@@ -2,28 +2,7 @@ import "./BlogsDisplay.css";
 import React from "react";
 import { getBlogs } from "../../services/blogApi";
 import BlogItem from "./BlogItem";
-
-// function BlogDisplay() {
-//   const [blogsResponse, setBlogsResponse] = useState({});
-
-//   getBlogs()
-//     .then((response) => response.json())
-//     .then((data) => setBlogsResponse(data));
-
-//    getBlogs(){
-//     return blogsResponse.data;
-//   };
-
-//   return (
-//     <div className="blog">
-//       {blogsResponse && blogsResponse.data && (
-//         <span>{JSON.stringify(getBlogs())}</span>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default BlogDisplay;
+import Pagination from "./../pagination/Pagination";
 
 class BlogDisplay extends React.Component {
   constructor() {
@@ -63,6 +42,7 @@ class BlogDisplay extends React.Component {
         {this.state.blogsResponse &&
           this.state.blogsResponse.data &&
           this.getBlogPostComps()}
+        {this.props.showPagination && <Pagination></Pagination>}
       </div>
     );
   }
