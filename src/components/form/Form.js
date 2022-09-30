@@ -6,16 +6,23 @@ import { getCatergories, saveBlogPost } from "../../services/blogApi";
 import Btn from "../btn/Btn";
 import "./Form.css";
 
+const initialState = {
+  catergories: [],
+  title: "",
+  img: "",
+  catergory: "1",
+  description: "",
+};
+
 class BlogForm extends React.Component {
   constructor() {
     super();
-    this.state = {
-      catergories: [],
-      title: "",
-      img: "",
-      catergory: "",
-      description: "",
-    };
+    this.state = initialState;
+  }
+
+  resetStateAndRefresh() {
+    this.setState(initialState);
+    window.location.reload();
   }
 
   setCatergories(catergories) {
@@ -29,7 +36,14 @@ class BlogForm extends React.Component {
   }
 
   onSave = () => {
-    saveBlogPost(this.state).then(alert("Blog created"));
+    saveBlogPost(this.state).then((res) => {
+      if (res.status == 201) {
+        alert("Blog created");
+        this.resetStateAndRefresh();
+      } else {
+        alert("Error when creating blog");
+      }
+    });
   };
 
   componentDidMount() {
