@@ -1,7 +1,7 @@
-.footer{
-    height: 10vh;
-    background-color: lightgreen;
-    display: flex;
-    justify-content: center;
-    padding-top: 35px;
+.footer {
+  height: 5vh;
+  background-color: #c5bba3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

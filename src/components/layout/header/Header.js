@@ -3,14 +3,14 @@ import "./Header.css";
 function Header() {
   return (
     <div className="header-container">
-      <a>Social Brothers</a>
+      <a href="/" className="logo-title">Social Brothers</a>
       <nav className="navbar">
         <ul className="navbar-list">
           <li className="navbar-item">
-            <a>Home</a>
+            <a href="/home">Home</a>
           </li>
           <li className="navbar-item">
-            <a>Blog</a>
+            <a href="/blogs">Blog</a>
           </li>
         </ul>
       </nav>

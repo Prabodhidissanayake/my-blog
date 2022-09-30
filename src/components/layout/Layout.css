@@ -1,12 +1,12 @@
-.layout{
-    padding: 0 10vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.layout {
+  padding: 0 10vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.content{
-    background-color: chartreuse;
-    min-height: 60vh;
+.content {
+  min-height: 65vh;
+  background-color: #e8dfca;
 }

@@ -1,30 +1,27 @@
-.home-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    /* justify-content: space-around; */
-    
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
 }
 
-.panel{
-    border: 1px solid;
-    height: 75%;
-    background-color: yellow;
-   
+.panel {
+  /* height: 75%; */
+  background-color: #aebdca;
+  border-radius: 10px;
 }
 
 .left-panel {
-    width: 40%;
-    margin-left: 4%;
-    padding: 10px;
+  width: 40%;
+  padding: 10px;
+  /* background-color: red; */
+  margin: 3rem;
 }
 
-.right-panel{
-    width: 50%;
-    margin-right: 4%; 
+.right-panel {
+  width: 50%;
+  margin-right: 2rem;
 
-    /* margin-top: 10px;
+  /* margin-top: 10px;
     margin-bottom: 10px; */
-
 }

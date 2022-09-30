@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { getCatergories, saveBlogPost } from "../../services/blogApi";
 import Btn from "../btn/Btn";
-import "./Form.css";
+import "./BlogForm.css";
 
 const initialState = {
   catergories: [],
@@ -52,7 +52,7 @@ class BlogForm extends React.Component {
 
   render() {
     return (
-      <Form>
+      <Form className="height-100">
         <Form.Group as={Col} controlId="formGridTitle">
           <Form.Label>Blog Title</Form.Label>
           <Form.Control
@@ -94,13 +94,15 @@ class BlogForm extends React.Component {
           <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
-            rows={3}
+            rows={10}
             onChange={(e) =>
               this.setState({ description: e.currentTarget.value })
             }
           />
         </Form.Group>
-        <Btn btnText="Save" onClick={this.onSave}></Btn>
+        <div className="btn-align">
+          <Btn btnText="Save" onClick={this.onSave}></Btn>
+        </div>
       </Form>
     );
   }

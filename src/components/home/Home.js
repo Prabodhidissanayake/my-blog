@@ -1,6 +1,6 @@
 import "./Home.css";
 import BlogDisplay from "../blogPost/BlogDisplay";
-import BlogForm from "../form/Form";
+import BlogForm from "../blogForm/BlogForm";
 
 function Home() {
   return (
