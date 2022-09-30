@@ -7,7 +7,7 @@
 
 .panel {
   /* height: 75%; */
-  background-color: #aebdca;
+  background-color: #FFD8A9;
   border-radius: 10px;
 }
 
@@ -25,3 +25,12 @@
   /* margin-top: 10px;
     margin-bottom: 10px; */
 }
+
+/* media queries */
+
+@media (max-width: 1350px) {
+  .home-container {
+    flex-direction: column;
+  }
+}
+

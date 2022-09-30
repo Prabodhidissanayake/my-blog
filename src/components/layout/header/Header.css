@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   height: 30vh;
-  background-color: #c5bba3;
+  background-color: #F1A661;
 }
 
 .navbar-list {
@@ -43,6 +43,28 @@
   margin-top: 2rem;
   font-weight: bolder;
 }
+
 .logo-title:hover {
   color: #255c8b;
 }
+
+/* media queries */
+
+@media (max-width: 1130px) {
+  .logo-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .logo-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo-title {
+    font-size: 1rem;
+  }
+}
+
