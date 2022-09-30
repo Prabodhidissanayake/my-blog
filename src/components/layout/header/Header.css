@@ -37,9 +37,12 @@
 
 .logo-title {
   text-decoration: none;
-  color: #aebdca;
+  color: #255c8b;
   font-size: 5rem;
   margin-left: 2rem;
   margin-top: 2rem;
   font-weight: bolder;
+}
+.logo-title:hover {
+  color: #255c8b;
 }
