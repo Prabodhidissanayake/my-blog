@@ -1,8 +1,9 @@
-import "./BlogsDisplay.css";
+import "./BlogDisplay.css";
 import React, { useEffect } from "react";
 import { getBlogs } from "../../services/blogApi";
 import BlogItem from "./BlogItem";
 import BlogPagination from "../blogPagination/BlogPagination";
+import Btn from "../btn/Btn";
 
 class BlogDisplay extends React.Component {
   constructor() {
@@ -20,6 +21,10 @@ class BlogDisplay extends React.Component {
   setCurrentPage = (page) => {
     this.setState({ currentPage: page });
     this.loadBlogs();
+  };
+
+  loadNextPage = () => {
+    this.setCurrentPage(this.state.blogsResponse.current_page + 1);
   };
 
   getBlogPosts() {
@@ -62,6 +67,13 @@ class BlogDisplay extends React.Component {
             paginationDetails={this.getPaginationDetails()}
             onPageSelect={this.setCurrentPage}
           ></BlogPagination>
+        )}
+        {this.props.showMore && (
+          <Btn
+            className="blog-btn"
+            btnText="Show More"
+            onClick={this.loadNextPage}
+          />
         )}
       </div>
     );
