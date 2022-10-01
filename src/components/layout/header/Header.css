@@ -79,3 +79,7 @@
     font-size: 0.8rem;
   }
 }
+
+.active {
+  text-decoration: underline !important;
+}
