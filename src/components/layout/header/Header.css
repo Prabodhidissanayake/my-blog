@@ -16,7 +16,7 @@
   display: flex;
   justify-content: space-between;
   height: 30vh;
-  background-color: #F1A661;
+  background-color: #f1a661;
 }
 
 .navbar-list {
@@ -31,14 +31,14 @@
 }
 
 .navbar-item a {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   text-decoration: none;
 }
 
 .logo-title {
   text-decoration: none;
   color: #255c8b;
-  font-size: 5rem;
+  font-size: 4rem;
   margin-left: 2rem;
   margin-top: 2rem;
   font-weight: bolder;
@@ -54,11 +54,19 @@
   .logo-title {
     font-size: 3rem;
   }
+
+  .navbar-item a {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 720px) {
   .logo-title {
     font-size: 2rem;
+  }
+
+  .navbar-item a {
+    font-size: 1rem;
   }
 }
 
@@ -66,5 +74,8 @@
   .logo-title {
     font-size: 1rem;
   }
-}
 
+  .navbar-item a {
+    font-size: 0.8rem;
+  }
+}
