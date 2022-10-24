@@ -8,7 +8,7 @@ function Header() {
   return (
     <div className="header-container">
       <a href="/" className="logo-title">
-        Social Brothers
+        Prabodhi Blogs
       </a>
       <nav className="navbar">
         <ul className="navbar-list">
